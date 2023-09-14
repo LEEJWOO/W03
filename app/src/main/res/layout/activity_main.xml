@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,26 +19,63 @@
         android:gravity="center"
         android:padding="30dp"
         android:layout_margin="30dp"
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="올려 주세요"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
-
     <Button
-        android:id="@+id/btnSub"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="내려 주세요" />
+            android:id="@+id/btnRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="초기화"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtcount"
+            app:layout_constraintBottom_toTopOf="parent"
+        tools:ignore="UnknownId" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/btnRes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="날려 주세요"
-        />
-    
-    <LinearLayout
-    </LinearLayout>
-</LinearLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context=".MainActivity">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtCount"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="0"-->
+<!--        android:textSize="120sp"-->
+<!--        android:background="#ff0"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="30dp"-->
+<!--        android:layout_margin="30dp"-->
+<!--    <Button-->
+<!--        android:id="@+id/btnAdd"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="올려 주세요"-->
+<!--        />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnSub"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="내려 주세요" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnRes"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="날려 주세요"-->
+<!--        />-->
+<!--    -->
+<!--</LinearLayout>-->
