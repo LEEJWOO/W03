@@ -13,7 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "W02Counter"
-include(":app")
+rootProject.name = "S23W03Lotto2"
 include(":app")
  
