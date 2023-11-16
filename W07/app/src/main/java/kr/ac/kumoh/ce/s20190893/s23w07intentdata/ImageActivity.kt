@@ -12,8 +12,11 @@ class ImageActivity : AppCompatActivity() {
         setContentView(main.root)
 
         Log.i("Image!!!",
-            intent.getStringExtra( "location"))
+            intent.getStringExtra(MainActivity.KEY_NAME))
+
+        val res = when
 
         main.image.setImageResource(R.drawable.white)
     }
 }
+

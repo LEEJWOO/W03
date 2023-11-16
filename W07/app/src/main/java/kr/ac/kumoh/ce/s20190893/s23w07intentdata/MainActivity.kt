@@ -2,60 +2,56 @@ package kr.ac.kumoh.ce.s20190893.s23w07intentdata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
 import android.widget.Toast
 import kr.ac.kumoh.ce.s20190893.s23w07intentdata.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     companion object{
+        const val  IMAGE_NAME = "image name"
+        const val  IMAGE_RESULT = "image result"
+
+
         const val KEY_NAME = "lacation"
         const val  MOUNTAIN = "mountain"
         const val  SEA = "sea"
     }
 
     private lateinit var main: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        main = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(main.root)
-
-        <Button
-            android:id="@+id/myButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Click Me"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-        />
-
-        <Button
-        android:id="@+id/myButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click Me"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-        main.btnMountain.setOnClickListener {
-            Toast.makeText(this,
-                "산 이미지"
-                Toast.LENGTH_SHORT).show()
-            val intent = intent(this,
-                ImageActivity::class.java)
-            startActicity(intent)
+    override fun onClick(p0: View?) {
+        val intent = Intent(this, ImageActivity::class.java)
+        val value = when (p0?.id) {S
+            main.btnMountain.id -> {
+                Toast.makeText(this,
+                    "산 이미지",
+                    Toast.LENGTH_SHORT).show()
+                MOUNTAIN
+            }
+            main.btnSea.id -> {
+                Toast.makeText(this,
+                    "바다 이미지",
+                    Toast.LENGTH_SHORT).show()
+                SEA
+            }
+            else -> return
         }
-        main.btnSea.setOnClickListener {
-            Toast.makeText(this,
-                "바다 이미지"
-                Toast.LENGTH_SHORT).show()
-            val intent = intent(this,
-                ImageActivity::class.java)
-            startActicity(intent)
+        intent.putExtra(KEY_NAME, value)
+        startActivity(intent)
         }
+    }
+
+    override fun onClick(v: View?) {
+        val intent = Intent()
+        val value = when (v?.id){
+            main.btnLike.id -> LIKE
+            main.btnDislike.id -> DISLIKE
+            else -> NONE
+    }
+    //TODO : Image_NAME  putExtra() 필요
+        intent.putExtra(MainActivity.KEY_NAME, value)
+        startActivity(intent)
+        finish()
     }
 }
